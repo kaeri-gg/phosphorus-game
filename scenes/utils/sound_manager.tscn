@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dli2v7y1atlqn"]
+
+[ext_resource type="AudioStream" uid="uid://cp2pvh7oa32i" path="res://assets/audio/click.mp3" id="1_gbdfy"]
+[ext_resource type="Script" uid="uid://chkyuswi06ng" path="res://scripts/managers/sound_manager.gd" id="1_mpi5b"]
+[ext_resource type="AudioStream" uid="uid://etilaxgtc1f5" path="res://assets/audio/wrong-answer.mp3" id="2_v1pt3"]
+[ext_resource type="AudioStream" uid="uid://yt5fwnga1ifr" path="res://assets/audio/correct-answer-1.mp3" id="3_mpi5b"]
+[ext_resource type="AudioStream" uid="uid://d2xp2tsjwjaua" path="res://assets/audio/winning-sound.mp3" id="4_aa63w"]
+[ext_resource type="AudioStream" uid="uid://ds57loqx46qmq" path="res://assets/audio/tick-sound.mp3" id="5_k1d7a"]
+[ext_resource type="AudioStream" uid="uid://t2qf0pv6n5ro" path="res://assets/audio/enter-game.mp3" id="6_gb18h"]
+
+[node name="SoundManager" type="Node" unique_id=2116437054]
+script = ExtResource("1_mpi5b")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=278305593]
+stream = ExtResource("1_gbdfy")
+bus = &"SFX"
+
+[node name="WrongAnswer" type="AudioStreamPlayer2D" parent="." unique_id=483938059]
+stream = ExtResource("2_v1pt3")
+bus = &"SFX"
+
+[node name="CorrectAnswer" type="AudioStreamPlayer2D" parent="." unique_id=147425404]
+stream = ExtResource("3_mpi5b")
+bus = &"SFX"
+
+[node name="WinningSound" type="AudioStreamPlayer2D" parent="." unique_id=778040891]
+stream = ExtResource("4_aa63w")
+bus = &"SFX"
+
+[node name="Tick" type="AudioStreamPlayer2D" parent="." unique_id=1928620420]
+stream = ExtResource("5_k1d7a")
+bus = &"SFX"
+
+[node name="EnterGame" type="AudioStreamPlayer2D" parent="." unique_id=1051888898]
+stream = ExtResource("6_gb18h")
+bus = &"SFX"
