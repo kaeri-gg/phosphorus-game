@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @onready var player_sprite: Sprite2D = $Sprite2D
@@ -24,6 +25,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	flip_char_on_move()
+
 
 func flip_char_on_move() -> void:
 	if velocity.x > 0:

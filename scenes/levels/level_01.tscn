@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://ckj7fgxtg1c"]
 
 [ext_resource type="Texture2D" uid="uid://dvm06j4ydbo5s" path="res://assets/backgrounds/Background.png" id="1_m802k"]
+[ext_resource type="Script" uid="uid://cvwru21ay1dyj" path="res://scripts/levels/base_level.gd" id="1_x64hl"]
 [ext_resource type="PackedScene" uid="uid://bn6iix4bnoteb" path="res://scenes/components/platforms/platform-yellow-square.tscn" id="2_i2aat"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="3_2djvx"]
 [ext_resource type="PackedScene" uid="uid://di6q1k56qura0" path="res://scenes/components/platforms/platform-yellow-inbetween.tscn" id="4_uvc87"]
 [ext_resource type="PackedScene" uid="uid://birhevdxnyshv" path="res://scenes/components/platforms/platform_gray.tscn" id="5_qdh5e"]
-[ext_resource type="PackedScene" uid="uid://806n17y3wtct" path="res://scenes/components/platforms/platform_red_in_between.tscn" id="6_50wog"]
 [ext_resource type="PackedScene" uid="uid://chp22pksyjabh" path="res://scenes/components/platforms/platform_white_electricity.tscn" id="7_1ey3t"]
+[ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="8_t0hvh"]
 
 [node name="Level_01" type="Control" unique_id=627543149]
 layout_mode = 3
@@ -15,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_x64hl")
 
 [node name="Background" type="TextureRect" parent="." unique_id=513751204]
 layout_mode = 1
@@ -27,6 +29,7 @@ texture = ExtResource("1_m802k")
 expand_mode = 3
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("3_2djvx")]
+unique_name_in_owner = true
 position = Vector2(177, 345)
 
 [node name="PlatformYellowSquare" parent="." unique_id=1399212371 instance=ExtResource("2_i2aat")]
@@ -38,8 +41,8 @@ position = Vector2(449, 619.00006)
 [node name="PlatformGray" parent="." unique_id=873861247 instance=ExtResource("5_qdh5e")]
 position = Vector2(694, 576)
 
-[node name="PlatformRedInBetween" parent="." unique_id=1493183219 instance=ExtResource("6_50wog")]
-position = Vector2(849.00006, 635)
-
 [node name="PlatformWhiteElectricity" parent="." unique_id=1775069916 instance=ExtResource("7_1ey3t")]
-position = Vector2(1060.0001, 591)
+position = Vector2(1086, 592)
+
+[node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("8_t0hvh")]
+position = Vector2(862, 748)
