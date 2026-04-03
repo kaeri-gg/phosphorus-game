@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://o6bppqyqi2h5" path="res://assets/platforms/Platform-yellow-square.png" id="1_4aq06"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4aq06"]
-radius = 67.0
+radius = 24.285736
 height = 384.0
 
 [node name="PlatformYellowSquare" type="StaticBody2D" unique_id=1399212371]
@@ -13,16 +13,16 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_4aq06")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=363459197]
-position = Vector2(-3, -103)
+position = Vector2(-2.8571434, -142.85715)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_4aq06")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=388068112]
-position = Vector2(-139, 35.000015)
+position = Vector2(-180, 34.285713)
 rotation = -3.1415925
 shape = SubResource("CapsuleShape2D_4aq06")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=934088349]
-position = Vector2(133, 33)
+position = Vector2(175.7143, 35.714287)
 rotation = -3.1415925
 shape = SubResource("CapsuleShape2D_4aq06")

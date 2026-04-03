@@ -15,13 +15,14 @@ _data = {
 &"idle": SubResource("Animation_6mmc7")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=1778542087 groups=["can_interact_with_water"]]
+[node name="Player" type="CharacterBody2D" unique_id=1778542087]
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_h3cwf")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=1128994884]
 sprite_frames = ExtResource("2_h3cwf")
-animation = &"dead"
+animation = &"burning"
+autoplay = "stable"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=71121053]
 position = Vector2(0, 49.999996)

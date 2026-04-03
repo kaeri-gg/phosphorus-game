@@ -3,9 +3,9 @@ extends CharacterBody2D
 
 @onready var player_sprite: AnimatedSprite2D = $PlayerSprite
 
-# @onready var player_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @export var SPEED = 400.0
 @export var JUMP_VELOCITY = -800.0
+@export var AIR_SURVIVAL_TIME = 3.0
 
 signal is_stable
 signal is_burning
@@ -19,14 +19,25 @@ enum ENV { AIR, WATER }
 
 var current_state: STATE = STATE.STABLE
 var env_state: ENV = ENV.WATER
+var air_timer: Timer
 
 func _ready() -> void:
 	add_to_group("can_interact_with_water")
+	air_timer = Timer.new()
+	air_timer.one_shot = true
+	air_timer.wait_time = AIR_SURVIVAL_TIME
+	air_timer.timeout.connect(_on_air_timer_timeout)
+	add_child(air_timer)
+	update_visual_state()
 
 func change_state(new_state: STATE) -> void:
-	if current_state == new_state: return
+	if current_state == new_state:
+		return
+		
 	current_state = new_state
-# Emit corresponding signal
+	update_visual_state()
+	
+	# Emit corresponding signal
 	match new_state:
 		STATE.STABLE: 
 			is_stable.emit()
@@ -40,12 +51,14 @@ func change_state(new_state: STATE) -> void:
 			is_evolved.emit()
 
 func _physics_process(delta: float) -> void:
-	# Detect environment state
-	_detect_environment()
-
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+
+	if current_state == STATE.DEAD:
+		move_and_slide()
+		flip_char_on_move()
+		return
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -61,40 +74,70 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	flip_char_on_move()
 
-func _detect_environment() -> void:
-	var new_env_state : ENV = env_state
-	var new_state := current_state
+func detect_environment() -> void:
+	if env_state == ENV.WATER:
+		if not air_timer.is_stopped():
+			air_timer.stop()
 
-	# Check environment: AIR, or WATER
-	if is_on_floor():
-		new_env_state = ENV.AIR
-		new_state = STATE.SHAKING
-		player_sprite.play("shaking")
-		
-		utils.timeout(10)
-		new_state = STATE.BURNING
-		player_sprite.play("burning")
-		
-	elif not is_on_floor():
-		# can be in the water or jumping.
-		new_env_state = ENV.WATER
-		new_state = STATE.STABLE
-		player_sprite.play("stable")
+		change_state(STATE.STABLE)
+		return
 
-	# Only print and change state if something changed
-	if new_env_state != env_state:
-		env_state = new_env_state
-		match env_state:
-			ENV.AIR:
-				print("AIR - Player: SHAKING...")
-				print("AIR - Player: BURNING...")
-			
-			ENV.WATER:
-				print("WATER - Player: STABLE...")
+	check_hp()
+	change_state(STATE.SHAKING)
+	if air_timer.is_stopped():
+		air_timer.start()
 
-	if new_state != current_state:
-		change_state(new_state)
+func enter_water() -> void:
+	check_hp()
+	update_environment(ENV.WATER)
+	detect_environment()
 
+func leave_water() -> void:
+	check_hp()
+	update_environment(ENV.AIR)
+	detect_environment()
+
+func update_environment(location: ENV) -> void:
+	env_state = location
+	
+func check_hp() -> void:
+	if current_state == STATE.DEAD:
+		return
+	# TODO: Add health
+	
+func burn() -> void:
+	check_hp()
+
+	if not air_timer.is_stopped():
+		air_timer.stop()
+
+	change_state(STATE.BURNING)
+	
+func die() -> void:
+	if not air_timer.is_stopped():
+		air_timer.stop()
+
+	change_state(STATE.DEAD)
+
+func _on_air_timer_timeout() -> void:
+	if env_state != ENV.AIR:
+		return
+
+	burn()
+
+func update_visual_state() -> void:
+	match current_state:
+		STATE.STABLE:
+			player_sprite.play("stable")
+		STATE.BURNING:
+			player_sprite.play("burning")
+		STATE.SHAKING:
+			player_sprite.play("shaking")
+		STATE.DEAD:
+			player_sprite.play("dead")
+		STATE.EVOLVED:
+			player_sprite.play("evolved")
+	
 func flip_char_on_move() -> void:
 	if velocity.x > 0:
 		player_sprite.flip_h = false

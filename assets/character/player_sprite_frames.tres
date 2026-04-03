@@ -6,8 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://damv1o27t2vw6" path="res://assets/character/burning.png" id="1_lxjjv"]
 [ext_resource type="Texture2D" uid="uid://c4cmsvj71gn1p" path="res://assets/character/tutorial-images/Phosphorus VIBRATING glowing tutorial.png" id="2_jfkvh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_myjh3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfkvh"]
 atlas = ExtResource("1_lxjjv")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxjjv"]
+atlas = ExtResource("2_jfkvh")
 region = Rect2(0, 0, 1920, 1080)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g6ksb"]
@@ -26,7 +30,7 @@ region = Rect2(0, 0, 1920, 1080)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_myjh3")
+"texture": SubResource("AtlasTexture_jfkvh")
 }],
 "loop": true,
 "name": &"burning",
@@ -34,7 +38,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_jfkvh")
+"texture": SubResource("AtlasTexture_lxjjv")
 }],
 "loop": true,
 "name": &"dead",

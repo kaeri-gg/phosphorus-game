@@ -1,8 +1,8 @@
 @tool
 extends Node2D
-class_name water
+class_name Water
 
-@export var water_size: Vector2 = Vector2(8.0, 16.0)
+@export var water_size: Vector2 = Vector2(300, 140.0)
 @export var surface_pos_y: float = 0.5
 @export_range(2, 512) var segment_count: int = 64
 
@@ -14,8 +14,8 @@ class_name water
 @export_range(1, 64) var wave_spread_updates: int = 8 #Base : 8
 
 @export var surface_line_thickness: float = 1.0
-@export var surface_color: Color = Color("3ce1da")
-@export var water_fill_color: Color = Color("37b0c5")
+@export var surface_color: Color = Color("c3fbf7a0")
+@export var water_fill_color: Color = Color("57d1e86b")
 
 var segment_data: Array = []
 var recently_splashed: bool = false
@@ -154,10 +154,16 @@ func _get_body_velocity_y(body: Node) -> float:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("can_interact_with_water"):
-		var vy := _get_body_velocity_y(body)
-		splash(body.global_position, -vy * player_splash_multiplier)
+		if body is Player:
+			body.enter_water()
+
+			var vy := _get_body_velocity_y(body)
+			splash(body.global_position, -vy * player_splash_multiplier)
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("can_interact_with_water"):
-		var vy := _get_body_velocity_y(body)
-		splash(body.global_position,  vy * player_splash_multiplier)
+		if body is Player:
+			body.leave_water()
+
+			var vy := _get_body_velocity_y(body)
+			splash(body.global_position,  vy * player_splash_multiplier)
