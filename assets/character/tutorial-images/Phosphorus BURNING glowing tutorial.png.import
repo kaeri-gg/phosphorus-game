@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl8fgw43gu77n"
-path="res://.godot/imported/Phosphorus-idle-red.png-d135cd83b9d886167f8adc618a50f65e.ctex"
+uid="uid://c02j85je0rice"
+path="res://.godot/imported/Phosphorus BURNING glowing tutorial.png-36240716f8b81267e53506525acde6e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/Phosphorus-idle-red.png"
-dest_files=["res://.godot/imported/Phosphorus-idle-red.png-d135cd83b9d886167f8adc618a50f65e.ctex"]
+source_file="res://assets/character/tutorial-images/Phosphorus BURNING glowing tutorial.png"
+dest_files=["res://.godot/imported/Phosphorus BURNING glowing tutorial.png-36240716f8b81267e53506525acde6e8.ctex"]
 
 [params]
 

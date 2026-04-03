@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djpnjlqtltf65"
-path="res://.godot/imported/Phosphorus-vibrating.png-720ecb6c9a117b08f5b1f42856027e44.ctex"
+uid="uid://c4cmsvj71gn1p"
+path="res://.godot/imported/Phosphorus VIBRATING glowing tutorial.png-95b51358b6b32aed748986cd5184c1c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/Phosphorus-vibrating.png"
-dest_files=["res://.godot/imported/Phosphorus-vibrating.png-720ecb6c9a117b08f5b1f42856027e44.ctex"]
+source_file="res://assets/character/tutorial-images/Phosphorus VIBRATING glowing tutorial.png"
+dest_files=["res://.godot/imported/Phosphorus VIBRATING glowing tutorial.png-95b51358b6b32aed748986cd5184c1c5.ctex"]
 
 [params]
 

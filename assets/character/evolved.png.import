@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di72gprw6jp4b"
-path="res://.godot/imported/Phosphorus-idle.png-c61649700f5a595c8aa77e11693071ee.ctex"
+uid="uid://3hkacelqwncl"
+path="res://.godot/imported/evolved.png-f6c702dbb18c8c83101874b4e0e19ef0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/Phosphorus-idle.png"
-dest_files=["res://.godot/imported/Phosphorus-idle.png-c61649700f5a595c8aa77e11693071ee.ctex"]
+source_file="res://assets/character/evolved.png"
+dest_files=["res://.godot/imported/evolved.png-f6c702dbb18c8c83101874b4e0e19ef0.ctex"]
 
 [params]
 

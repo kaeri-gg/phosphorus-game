@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5k4tqg1vtxaa"
-path="res://.godot/imported/Phosphorus-burning.png-1446602bbc0868131c58c0b237685309.ctex"
+uid="uid://dtgb8n5wo8q6j"
+path="res://.godot/imported/shaking.png-8c550e463c5624612d7245bc5fc97d8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/Phosphorus-burning.png"
-dest_files=["res://.godot/imported/Phosphorus-burning.png-1446602bbc0868131c58c0b237685309.ctex"]
+source_file="res://assets/character/shaking.png"
+dest_files=["res://.godot/imported/shaking.png-8c550e463c5624612d7245bc5fc97d8b.ctex"]
 
 [params]
 
