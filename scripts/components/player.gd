@@ -20,6 +20,9 @@ enum ENV { AIR, WATER }
 var current_state: STATE = STATE.STABLE
 var env_state: ENV = ENV.WATER
 
+func _ready() -> void:
+	add_to_group("can_interact_with_water")
+
 func change_state(new_state: STATE) -> void:
 	if current_state == new_state: return
 	current_state = new_state
