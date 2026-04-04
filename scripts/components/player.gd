@@ -21,13 +21,16 @@ var current_state: STATE = STATE.STABLE
 var env_state: ENV = ENV.WATER
 var air_timer: Timer
 
-func _ready() -> void:
-	add_to_group("can_interact_with_water")
+func set_timer() -> void:
 	air_timer = Timer.new()
 	air_timer.one_shot = true
 	air_timer.wait_time = AIR_SURVIVAL_TIME
 	air_timer.timeout.connect(_on_air_timer_timeout)
 	add_child(air_timer)
+
+func _ready() -> void:
+	add_to_group("can_interact_with_water")
+	set_timer()
 	update_visual_state()
 
 func change_state(new_state: STATE) -> void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o6bppqyqi2h5"
-path="res://.godot/imported/Platform-yellow-square.png-05ddacef785a8e49fcd42d605c89fe28.ctex"
+uid="uid://c0jlfv5gyfav7"
+path="res://.godot/imported/Inbetween 4.png-a34e2657b361655a5b6f8d01b63e8e6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/platforms/Platform-yellow-square.png"
-dest_files=["res://.godot/imported/Platform-yellow-square.png-05ddacef785a8e49fcd42d605c89fe28.ctex"]
+source_file="res://assets/platforms/Inbetween 4.png"
+dest_files=["res://.godot/imported/Inbetween 4.png-a34e2657b361655a5b6f8d01b63e8e6c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hc11wqiak3nj"
-path="res://.godot/imported/Platform inbetween 1.png-7a52711a3a7371214fc3a7f939c801c5.ctex"
+uid="uid://21cn4p76li3x"
+path="res://.godot/imported/Vaccum oven.png-8635cb900d04e28e7c6323f0347e9128.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/platforms/Platform inbetween 1.png"
-dest_files=["res://.godot/imported/Platform inbetween 1.png-7a52711a3a7371214fc3a7f939c801c5.ctex"]
+source_file="res://assets/platforms/Vaccum oven.png"
+dest_files=["res://.godot/imported/Vaccum oven.png-8635cb900d04e28e7c6323f0347e9128.ctex"]
 
 [params]
 

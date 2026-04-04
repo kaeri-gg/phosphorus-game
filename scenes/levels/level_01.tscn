@@ -35,8 +35,9 @@ position = Vector2(382, 526)
 JUMP_VELOCITY = -500.0
 
 [node name="Water" type="Node2D" parent="." unique_id=1444035852]
-position = Vector2(304, 492)
+position = Vector2(297, 491)
 script = ExtResource("9_kfebt")
+water_size = Vector2(310, 140)
 metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
 
 [node name="PlatformYellowSquare" parent="." unique_id=1399212371 instance=ExtResource("2_i2aat")]
