@@ -26,7 +26,7 @@ script = ExtResource("1_yklhy")
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("3_4hx2o")]
 unique_name_in_owner = true
-position = Vector2(110.00002, 385)
+position = Vector2(104, 538)
 
 [node name="Water" type="Node2D" parent="." unique_id=1444035852]
 position = Vector2(-37, 504)
