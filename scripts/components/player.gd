@@ -20,6 +20,7 @@ signal is_shaking
 
 signal is_dead
 signal is_evolved
+signal died
 signal die_timer_value(time_left: int)
 signal switch_pressed
 
@@ -79,10 +80,10 @@ func _physics_process(delta: float) -> void:
 		jump_count = 0
 		
 	if current_state == STATE.DEAD:
+		velocity = Vector2.ZERO
 		move_and_slide()
-		flip_char_on_move()
 		return
-
+		
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and jump_count < max_jump:
 		jump_count += 1
@@ -173,7 +174,10 @@ func update_visual_state() -> void:
 		STATE.SHAKING:
 			player_sprite.play("shaking")
 		STATE.DEAD:
+			await utils.timeout(0.7)
+			player_sprite.play("start_burning")
 			player_sprite.play("dead")
+			died.emit()
 		STATE.EVOLVED:
 			player_sprite.play("evolved")
 
