@@ -14,12 +14,13 @@ extends CharacterBody2D
 const max_jump: int = 2
 var jump_count: int
 
-signal is_stable
-signal is_burning
-signal is_shaking
+signal stabilized
+signal burned
+signal shook
 
-signal is_dead
-signal is_evolved
+signal dead
+signal evolved
+
 signal died
 signal die_timer_value(time_left: int)
 signal switch_pressed
@@ -32,7 +33,7 @@ enum STATE { STABLE, BURNING, SHAKING, DEAD, EVOLVED }
 enum ENV { AIR, WATER }
 
 var current_state: STATE = STATE.STABLE
-var env_state: ENV = ENV.WATER
+var env_state: ENV = ENV.AIR
 var was_moving: bool = false
 
 func _ready() -> void:
@@ -60,29 +61,30 @@ func change_state(new_state: STATE) -> void:
 	# Emit corresponding signal
 	match new_state:
 		STATE.STABLE: 
-			is_stable.emit()
+			stabilized.emit()
 		STATE.BURNING: 
-			is_burning.emit()
+			burned.emit()
 		STATE.SHAKING: 
-			is_shaking.emit()
+			shook.emit()
 		STATE.DEAD: 
-			is_dead.emit()
+			dead.emit()
 		STATE.EVOLVED: 
-			is_evolved.emit()
+			evolved.emit()
 
 func _physics_process(delta: float) -> void:
 	survival_timer_label_updater()
+
+	if current_state == STATE.DEAD:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
 	if is_on_floor():
 		jump_count = 0
-		
-	if current_state == STATE.DEAD:
-		velocity = Vector2.ZERO
-		move_and_slide()
-		return
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and jump_count < max_jump:
@@ -164,18 +166,25 @@ func die() -> void:
 	
 	
 func update_visual_state() -> void:
+	var state_at_call := current_state
 	match current_state:
 		STATE.STABLE:
 			player_sprite.play("stable")
 		STATE.BURNING:
 			player_sprite.play("start_burning")
 			await utils.timeout(0.5)
+			if current_state != state_at_call:
+				return
+				
 			player_sprite.play("repeat_burning")
 		STATE.SHAKING:
 			player_sprite.play("shaking")
 		STATE.DEAD:
-			await utils.timeout(0.7)
 			player_sprite.play("start_burning")
+			await utils.timeout(0.7)
+			if current_state != state_at_call:
+				return
+				
 			player_sprite.play("dead")
 			died.emit()
 		STATE.EVOLVED:
@@ -188,7 +197,8 @@ func remaining_survival_timer_value() -> float:
 	return EASY_SURVIVAL_TIME
 
 func survival_timer_label_updater() -> void:
-	die_timer_value.emit(remaining_survival_timer_value())
+	if env_state == ENV.AIR and not die_timer.is_stopped():
+		die_timer_value.emit(remaining_survival_timer_value())
 	
 func flip_char_on_move() -> void:
 	if velocity.x > 0:

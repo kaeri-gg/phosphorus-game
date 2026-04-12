@@ -27,10 +27,10 @@ func _on_portal_area_body_entered(body: Node) -> void:
 		return
 
 	is_transitioning = true
-	await utils.timeout(1)
 	sound_manager.play("EnterGame")
 	
-	call_deferred("_change_to_scene", resolved_scene_path)
+	await utils.fade_out(get_tree().current_scene, 0.5)
+	get_tree().change_scene_to_file(resolved_scene_path)
 	
 func _change_to_scene(scene_path: String) -> void:
 	var result: Error = get_tree().change_scene_to_file(scene_path)

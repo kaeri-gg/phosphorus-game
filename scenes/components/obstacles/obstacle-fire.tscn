@@ -7,7 +7,7 @@
 radius = 175.5
 height = 435.0
 
-[node name="ObstaclesFire" type="Area2D" unique_id=213981158]
+[node name="ObstacleFire" type="Area2D" unique_id=213981158]
 script = ExtResource("1_uwf5k")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1381941758]
