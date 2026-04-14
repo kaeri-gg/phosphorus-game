@@ -7,9 +7,7 @@ extends CharacterBody2D
 
 @export var SPEED : float = 400.0
 @export var JUMP_VELOCITY : float = -450.0
-@export var EASY_SURVIVAL_TIME : float = 5.0
-@export var HARD_AIR_SURVIVAL_TIME : float = 7.0
-@export var PLAYER_HEALTH : int = die_timer 
+@export var PLAYER_HEALTH : int = 7 
 
 var current_health : int
 
@@ -35,7 +33,6 @@ enum VERTICAL { GROUNDED, JUMPING_UP, JUMPING_DOWN }
 const max_jump: int = 2
 
 var jump_count: int
-var is_jumping: bool = false
 var vertical_state: VERTICAL = VERTICAL.GROUNDED
 var was_grounded: bool = true
 
@@ -99,11 +96,9 @@ func _physics_process(delta: float) -> void:
 
 	if is_on_floor():
 		jump_count = 0
-		is_jumping = false
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and jump_count < max_jump:
-		is_jumping = true
 		print("jumping up")
 		jump_count += 1
 		velocity.y = JUMP_VELOCITY
@@ -112,7 +107,7 @@ func _physics_process(delta: float) -> void:
 		player_sprite.play("jumping_up")
 
 	# Detect transition from ascending to descending
-	if is_jumping and vertical_state == VERTICAL.JUMPING_UP and velocity.y > 0:
+	if vertical_state == VERTICAL.JUMPING_UP and velocity.y > 0:
 		vertical_state = VERTICAL.JUMPING_DOWN
 		vertical_change.emit(VERTICAL.JUMPING_DOWN)
 		player_sprite.play("jumping_down")
@@ -160,9 +155,7 @@ func enter_water() -> void:
 	detect_environment()
 
 func leave_water() -> void:
-	if not is_jumping:
-		update_environment(ENV.AIR)
-	
+	update_environment(ENV.AIR)
 	detect_environment()
 
 func update_environment(location: ENV) -> void:
@@ -172,12 +165,7 @@ func player_will_die() -> void:
 	if env_state != ENV.AIR:
 		return
 	
-	if current_state == STATE.BURNING:
-		take_damage(1)
-	
 func player_will_burn() -> void:
-	print("burn")
-
 	if not burn_timer.is_stopped():
 		burn_timer.stop()
 
@@ -244,10 +232,7 @@ func update_visual_state() -> void:
 			player_sprite.play("evolved")
 
 func remaining_survival_timer_value() -> float:
-	if env_state == ENV.AIR and not die_timer.is_stopped():
-		return die_timer.time_left
-
-	return EASY_SURVIVAL_TIME
+	return die_timer.time_left
 
 func survival_timer_label_updater() -> void:
 	if env_state == ENV.AIR and not die_timer.is_stopped():
