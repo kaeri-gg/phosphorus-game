@@ -24,10 +24,8 @@ script = ExtResource("1_h3cwf")
 unique_name_in_owner = true
 position = Vector2(0, -289.99997)
 sprite_frames = ExtResource("2_h3cwf")
-animation = &"shaking"
+animation = &"stable"
 autoplay = "stable"
-frame = 26
-frame_progress = 1.0
 script = ExtResource("3_sjsxr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=71121053]
@@ -49,7 +47,8 @@ one_shot = true
 
 [node name="DieTimer" type="Timer" parent="." unique_id=1385908458]
 unique_name_in_owner = true
-wait_time = 3.0
+wait_time = 10.0
+one_shot = true
 
 [node name="BurnTimer" type="Timer" parent="." unique_id=394091858]
 unique_name_in_owner = true

@@ -2,13 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_yklhy"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="3_4hx2o"]
-[ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="4_km0xc"]
 [ext_resource type="PackedScene" uid="uid://cid873k1mkag8" path="res://scenes/components/water.tscn" id="5_km0xc"]
 [ext_resource type="PackedScene" uid="uid://cx7l01ab2no5a" path="res://scenes/components/platforms/platform_white_tank.tscn" id="6_4hx2o"]
-[ext_resource type="PackedScene" uid="uid://di6q1k56qura0" path="res://scenes/components/platforms/platform-yellow-inbetween.tscn" id="6_m2jhg"]
+[ext_resource type="PackedScene" uid="uid://di6q1k56qura0" path="res://scenes/components/platforms/platform_yellow_long_pipe.tscn" id="6_m2jhg"]
 [ext_resource type="PackedScene" uid="uid://iblv3dg4o762" path="res://scenes/components/platforms/switch_valve.tscn" id="7_km0xc"]
-[ext_resource type="PackedScene" uid="uid://806n17y3wtct" path="res://scenes/components/platforms/platform_red_in_between.tscn" id="8_4dr30"]
-[ext_resource type="PackedScene" uid="uid://dedns20av8iss" path="res://scenes/components/platforms/platform_red_in_between-2.tscn" id="8_n536o"]
+[ext_resource type="PackedScene" uid="uid://806n17y3wtct" path="res://scenes/components/platforms/platform_red_in_between_spring.tscn" id="8_4dr30"]
+[ext_resource type="PackedScene" uid="uid://dedns20av8iss" path="res://scenes/components/platforms/platform_red_connection_pipe.tscn" id="8_n536o"]
 [ext_resource type="PackedScene" uid="uid://u0rg4oghphj4" path="res://scenes/components/platforms/platform_gray_pipe.tscn" id="9_m2jhg"]
 [ext_resource type="PackedScene" uid="uid://ilowdnyvl11i" path="res://scenes/utils/timer.tscn" id="10_01hg1"]
 [ext_resource type="Texture2D" uid="uid://bplo8aemsfb12" path="res://assets/backgrounds/level-backgrounds/Screen 2.png" id="10_n536o"]
@@ -27,19 +26,19 @@ script = ExtResource("1_yklhy")
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("3_4hx2o")]
 unique_name_in_owner = true
-position = Vector2(110.00002, 385)
+position = Vector2(104, 538)
 
-[node name="Water" type="Node2D" parent="." unique_id=1444035852]
-position = Vector2(-37, 504)
-script = ExtResource("4_km0xc")
-water_size = Vector2(290, 140)
-metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
+[node name="Water" parent="." unique_id=285385396 instance=ExtResource("5_km0xc")]
+position = Vector2(-34, 505)
+water_size = Vector2(280, 200)
+surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 
-[node name="Water2" parent="." unique_id=285385396 instance=ExtResource("5_km0xc")]
-position = Vector2(602, 528)
-water_size = Vector2(600, 100)
-surface_color = Color(0.7647059, 0.9843137, 0.96862745, 0.627451)
-water_fill_color = Color(0.34117648, 0.81960785, 0.9098039, 0.41960785)
+[node name="Water2" parent="." unique_id=450277356 instance=ExtResource("5_km0xc")]
+position = Vector2(584, 633)
+water_size = Vector2(600, 10)
+surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.4392157)
+min_height = 10.0
+starts_full = false
 
 [node name="PlatformWhiteTank" parent="." unique_id=1227335199 instance=ExtResource("6_4hx2o")]
 position = Vector2(102.00001, 600.99994)
@@ -98,10 +97,10 @@ position = Vector2(581, 483.99997)
 rotation = 1.5707964
 scale = Vector2(0.545239, 0.7308498)
 
-[node name="CanvassLayer" type="CanvasLayer" parent="." unique_id=1043999466]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1043999466]
 layer = -10
 
-[node name="Background" type="TextureRect" parent="CanvassLayer" unique_id=513751204]
+[node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=513751204]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -110,7 +109,7 @@ grow_vertical = 2
 texture = ExtResource("10_n536o")
 expand_mode = 5
 
-[node name="Timer" parent="CanvassLayer" unique_id=291529227 instance=ExtResource("10_01hg1")]
+[node name="Timer" parent="CanvasLayer" unique_id=291529227 instance=ExtResource("10_01hg1")]
 unique_name_in_owner = true
 offset_left = -66.0
 offset_top = 3.0
@@ -123,10 +122,13 @@ player = NodePath("../../Player")
 [node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("14_n536o")]
 position = Vector2(1028, 783)
 
-[node name="Switch" parent="." unique_id=1596610064 instance=ExtResource("7_km0xc")]
-position = Vector2(321, 636)
+[node name="Switch" parent="." unique_id=1596610064 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("7_km0xc")]
+position = Vector2(325, 635.00006)
 rotation = 1.5707964
 scale = Vector2(0.20961541, 0.20961541)
+source_water = NodePath("../Water")
+target_water = NodePath("../Water2")
+transfer_duration = 1.0
 
 [node name="Switch2" parent="." unique_id=19979149 instance=ExtResource("7_km0xc")]
 position = Vector2(739, 309)
