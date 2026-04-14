@@ -143,7 +143,6 @@ func player_will_die() -> void:
 	
 	if current_state == STATE.BURNING:
 		take_damage(1)
-	#if air_timer.
 	
 func player_will_burn() -> void:
 	print("burn")
@@ -184,8 +183,6 @@ func play_death_animation() -> void:
 	await utils.timeout(0.7)
 	player_sprite.play("dead")
 	
-	# Level Reset
-	get_tree().reload_current_scene()
 	
 func take_damage(amount: int) -> void:
 	if current_state == STATE.DEAD:
