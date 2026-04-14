@@ -159,7 +159,7 @@ func heal() -> void:
 	# when player enters water, he's going to recover
 	if env_state == ENV.WATER:
 		current_health = PLAYER_HEALTH
-		health_changed.emit(current_health, PLAYER_HEALTH) # Add this
+		health_changed.emit(current_health, PLAYER_HEALTH)
 	
 func die() -> void:
 	if is_dying or current_state == STATE.DEAD:
@@ -187,7 +187,7 @@ func play_death_animation() -> void:
 func take_damage(amount: int) -> void:
 	if current_state == STATE.DEAD:
 		return
-	# this method can be modified to take 7 damage when walking into fire obstacle	
+
 	current_health -= amount
 	health_changed.emit(current_health, PLAYER_HEALTH) # Add this
 	
