@@ -19,12 +19,17 @@ _data = {
 [node name="Player" type="CharacterBody2D" unique_id=1778542087]
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_h3cwf")
+SPEED = null
+JUMP_VELOCITY = null
+EASY_SURVIVAL_TIME = null
+HARD_AIR_SURVIVAL_TIME = null
+PLAYER_HEALTH = null
 
 [node name="PlayerExpressionController" type="AnimatedSprite2D" parent="." unique_id=1128994884]
 unique_name_in_owner = true
 position = Vector2(0, -289.99997)
 sprite_frames = ExtResource("2_h3cwf")
-animation = &"stable"
+animation = &"moving"
 autoplay = "stable"
 script = ExtResource("3_sjsxr")
 
@@ -47,7 +52,7 @@ one_shot = true
 
 [node name="DieTimer" type="Timer" parent="." unique_id=1385908458]
 unique_name_in_owner = true
-wait_time = 3.0
+wait_time = 7.0
 
 [node name="BurnTimer" type="Timer" parent="." unique_id=394091858]
 unique_name_in_owner = true

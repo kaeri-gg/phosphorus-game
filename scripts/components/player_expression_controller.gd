@@ -34,9 +34,9 @@ func on_player_state_change(new_state: int) -> void:
 	if current_state != Player.STATE.STABLE:
 		is_playing_expression = false
 
-	if current_state == Player.STATE.SHAKING:
-		_start_shake_tween()
-		return
+	#if current_state == Player.STATE.SHAKING:
+		#_start_shake_tween()
+		#return
 
 	_stop_shake_tween()
 	if current_state != Player.STATE.STABLE:
@@ -44,8 +44,20 @@ func on_player_state_change(new_state: int) -> void:
 
 	play("stable")
 
-func on_player_movement_change(_moving: bool) -> void:
-	pass
+func on_player_movement_change(moving: bool) -> void:
+	if moving:
+		play("moving")
+	else:
+		play("stable")
+
+func on_player_vertical_change(new_vertical: int) -> void:
+	match new_vertical:
+		Player.VERTICAL.GROUNDED:
+			play("stable")
+		Player.VERTICAL.JUMPING_UP:
+			play("jumping_up")
+		Player.VERTICAL.JUMPING_DOWN:
+			play("jumping_down")
 
 func _schedule_next_blink() -> void:
 	blink_timer.wait_time = randf_range(BLINK_MIN_INTERVAL, BLINK_MAX_INTERVAL)

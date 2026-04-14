@@ -6,10 +6,10 @@ extends CharacterBody2D
 @onready var burn_timer: Timer = %BurnTimer
 
 @export var SPEED : float = 400.0
-@export var JUMP_VELOCITY : float = -500.0
+@export var JUMP_VELOCITY : float = -450.0
 @export var EASY_SURVIVAL_TIME : float = 5.0
 @export var HARD_AIR_SURVIVAL_TIME : float = 7.0
-@export var PLAYER_HEALTH : int = 7 
+@export var PLAYER_HEALTH : int = die_timer 
 
 var current_health : int
 
@@ -24,15 +24,21 @@ signal switch_pressed
 # signals for animation
 signal state_change(new_state: int)
 signal movement_change(is_moving: bool)
+signal vertical_change(new_vertical: int)
 
 signal health_changed(current: int, max_hp: int)
 
 enum STATE { STABLE, BURNING, SHAKING, DEAD, EVOLVED }
 enum ENV { AIR, WATER }
+enum VERTICAL { GROUNDED, JUMPING_UP, JUMPING_DOWN }
 
 const max_jump: int = 2
 
 var jump_count: int
+var is_jumping: bool = false
+var vertical_state: VERTICAL = VERTICAL.GROUNDED
+var was_grounded: bool = true
+
 var current_state: STATE = STATE.STABLE
 var env_state: ENV = ENV.AIR
 var was_moving: bool = false
@@ -48,6 +54,7 @@ func _ready() -> void:
 	burn_timer.timeout.connect(player_will_burn)
 	state_change.connect(player_sprite.on_player_state_change)
 	movement_change.connect(player_sprite.on_player_movement_change)
+	vertical_change.connect(player_sprite.on_player_vertical_change)
 	
 	detect_environment()
 	update_visual_state()
@@ -86,13 +93,29 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	# Detect landing (was airborne, now on floor)
+	var just_landed: bool = !was_grounded and is_on_floor()
+	was_grounded = is_on_floor()
+
 	if is_on_floor():
 		jump_count = 0
-		
+		is_jumping = false
+
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and jump_count < max_jump:
+		is_jumping = true
+		print("jumping up")
 		jump_count += 1
 		velocity.y = JUMP_VELOCITY
+		vertical_state = VERTICAL.JUMPING_UP
+		vertical_change.emit(VERTICAL.JUMPING_UP)
+		player_sprite.play("jumping_up")
+
+	# Detect transition from ascending to descending
+	if is_jumping and vertical_state == VERTICAL.JUMPING_UP and velocity.y > 0:
+		vertical_state = VERTICAL.JUMPING_DOWN
+		vertical_change.emit(VERTICAL.JUMPING_DOWN)
+		player_sprite.play("jumping_down")
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("move_left", "move_right")
@@ -107,6 +130,12 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	flip_char_on_move()
+
+	# Detect landing after move_and_slide()
+	if just_landed:
+		vertical_state = VERTICAL.GROUNDED
+		vertical_change.emit(VERTICAL.GROUNDED)
+		player_sprite.play("stable")
 
 func detect_environment() -> void:
 	if env_state == ENV.WATER:
@@ -131,7 +160,9 @@ func enter_water() -> void:
 	detect_environment()
 
 func leave_water() -> void:
-	update_environment(ENV.AIR)
+	if not is_jumping:
+		update_environment(ENV.AIR)
+	
 	detect_environment()
 
 func update_environment(location: ENV) -> void:
