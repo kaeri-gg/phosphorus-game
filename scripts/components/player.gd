@@ -9,7 +9,9 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY : float = -500.0
 @export var EASY_SURVIVAL_TIME : float = 5.0
 @export var HARD_AIR_SURVIVAL_TIME : float = 7.0
-@export var PLAYER_HEALTH : float = 7 
+@export var PLAYER_HEALTH : int = 7 
+
+var current_health : int
 
 const max_jump: int = 2
 var jump_count: int
@@ -27,6 +29,8 @@ signal switch_pressed
 signal state_change(new_state: int)
 signal movement_change(is_moving: bool)
 
+signal health_changed(current: int, max_hp: int)
+
 enum STATE { STABLE, BURNING, SHAKING, DEAD, EVOLVED }
 enum ENV { AIR, WATER }
 
@@ -35,6 +39,9 @@ var env_state: ENV = ENV.WATER
 var was_moving: bool = false
 
 func _ready() -> void:
+	current_health = PLAYER_HEALTH
+	health_changed.emit(current_health, PLAYER_HEALTH)
+	
 	add_to_group("can_interact_with_water")
 	
 	die_timer.timeout.connect(player_will_die)
@@ -112,7 +119,6 @@ func detect_environment() -> void:
 		change_state(STATE.STABLE)
 		return
 
-	check_hp()
 	change_state(STATE.SHAKING)
 	
 	if burn_timer.is_stopped():
@@ -121,12 +127,11 @@ func detect_environment() -> void:
 		die_timer.start()
 
 func enter_water() -> void:
-	check_hp()
 	update_environment(ENV.WATER)
+	heal()
 	detect_environment()
 
 func leave_water() -> void:
-	check_hp()
 	update_environment(ENV.AIR)
 	detect_environment()
 
@@ -138,28 +143,45 @@ func player_will_die() -> void:
 	if env_state != ENV.AIR:
 		return
 	
+	if current_state == STATE.BURNING:
+		take_damage(1)
 	#if air_timer.
-	die()
 	
 func player_will_burn() -> void:
 	print("burn")
-	check_hp()
 
 	if not burn_timer.is_stopped():
 		burn_timer.stop()
 
 	change_state(STATE.BURNING)	
+	take_damage(1)
 	
-func check_hp() -> void:
+func heal() -> void:
 	if current_state == STATE.DEAD:
 		return
-	# TODO: Add health
+	# when player enters water, he's going to recover
+	if env_state == ENV.WATER:
+		current_health = PLAYER_HEALTH
+		health_changed.emit(current_health, PLAYER_HEALTH) # Add this
 	
 func die() -> void:
 	if not die_timer.is_stopped():
 		die_timer.stop()
-		
+	
 	change_state(STATE.DEAD)
+	
+	# Level Reset
+	get_tree().reload_current_scene()
+	
+func take_damage(amount: int) -> void:
+	if current_state == STATE.DEAD:
+		return
+	# this method can be modified to take 7 damage when walking into fire obstacle	
+	current_health -= amount
+	health_changed.emit(current_health, PLAYER_HEALTH) # Add this
+	
+	if current_health <= 0:
+		die()
 	
 	
 func update_visual_state() -> void:
