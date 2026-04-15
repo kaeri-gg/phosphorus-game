@@ -17,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://p7607v0sss2w" path="res://scenes/components/platforms/platform_yellow_4_way_connector.tscn" id="15_4dr30"]
 [ext_resource type="PackedScene" uid="uid://dpf3sk7ywyfkh" path="res://scenes/components/platforms/platform_gray_connection_pipe.tscn" id="16_dscar"]
 [ext_resource type="PackedScene" uid="uid://bn6iix4bnoteb" path="res://scenes/components/platforms/platform_yellow_long_curved_pipe.tscn" id="17_01hg1"]
+[ext_resource type="PackedScene" uid="uid://bfmwwmfs6owv2" path="res://scenes/components/platforms/platform_red_closing_pipe.tscn" id="18_v5pqk"]
+[ext_resource type="PackedScene" uid="uid://dug7k3iil71ms" path="res://scenes/components/platforms/platform_gray_short_water_tank.tscn" id="19_m2te4"]
+[ext_resource type="PackedScene" uid="uid://x7kfgq6mseag" path="res://scenes/components/platforms/platform_gray_pipe_insert_cap.tscn" id="20_kxbgd"]
 
 [node name="Level_02" type="Control" unique_id=627543149]
 layout_mode = 3
@@ -37,10 +40,10 @@ water_size = Vector2(280, 200)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 
 [node name="Water2" parent="." unique_id=450277356 instance=ExtResource("5_km0xc")]
-position = Vector2(585, 506)
-water_size = Vector2(430, 130)
+position = Vector2(668, 605)
+water_size = Vector2(280, 60)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.4392157)
-min_height = 10.0
+min_height = 70.0
 starts_full = false
 
 [node name="PlatformWhiteTank" parent="." unique_id=1227335199 instance=ExtResource("6_4hx2o")]
@@ -82,6 +85,7 @@ rotation = -3.1415925
 scale = Vector2(0.35434592, 0.5503671)
 
 [node name="PlatformGrayPipe3" parent="." unique_id=1219730633 instance=ExtResource("9_m2jhg")]
+visible = false
 position = Vector2(796.99994, 618)
 rotation = -3.1415925
 scale = Vector2(0.56914014, 0.58312494)
@@ -164,3 +168,22 @@ offset_bottom = 3.0
 
 [node name="HealthBar" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("12_m2jhg")]
 player = NodePath("../../Player")
+
+[node name="PlatformRedClosingPipe" parent="CanvasLayer" unique_id=818493941 instance=ExtResource("18_v5pqk")]
+position = Vector2(696, 305.00003)
+rotation = -3.1415927
+scale = Vector2(0.06546811, 0.049480446)
+
+[node name="PlatformGrayShortWaterTank" parent="." unique_id=597132713 instance=ExtResource("19_m2te4")]
+position = Vector2(802.00006, 632.00006)
+scale = Vector2(0.24560371, 0.19079342)
+
+[node name="PlatformGrayPipeInsertCap" parent="." unique_id=1089872355 instance=ExtResource("20_kxbgd")]
+position = Vector2(961.00006, 636.00006)
+rotation = 1.5707964
+scale = Vector2(0.0441685, 0.0441685)
+
+[node name="PlatformGrayPipeInsertCap2" parent="." unique_id=1823183789 instance=ExtResource("20_kxbgd")]
+position = Vector2(661, 638.00006)
+rotation = -1.5707964
+scale = Vector2(0.0441685, 0.0441685)
