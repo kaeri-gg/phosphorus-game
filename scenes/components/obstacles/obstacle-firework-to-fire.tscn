@@ -8,9 +8,7 @@ script = ExtResource("1_burnable")
 type = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1381941758]
-light_mask = 2
 texture = ExtResource("2_r6fbg")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=965514273]
-build_mode = 1
 polygon = PackedVector2Array(-356, -23, 206, -69, 469, -68, 549, -6, 445, 36, 207, 41, -357, 8)

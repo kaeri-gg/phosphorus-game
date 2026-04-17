@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dodmut8bita5x" path="res://assets/obstacles/fire.png" id="1_ehk1u"]
 
 [node name="ObstacleFire" type="Area2D" unique_id=1256502193]
-collision_layer = 2
-collision_mask = 2
 script = ExtResource("1_burnable")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1381941758]
