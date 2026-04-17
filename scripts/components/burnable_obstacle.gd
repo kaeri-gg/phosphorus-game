@@ -1,68 +1,56 @@
 class_name BurnableObstacle
 extends Area2D
 
-enum BURN_STATE { NORMAL, BURNING, ASH }
+enum TYPE { FIRE, FIREWORK, WOOD }
 
-@export var is_fire: bool = false
+@export var type: TYPE
 
-var burn_state: BURN_STATE = BURN_STATE.NORMAL
+var _burn_state: int = 0
+var _kill_timer: Timer
 
 func _ready() -> void:
-	if "fire" in name.to_lower():
-		is_fire = true
-	body_entered.connect(_on_body_entered)
+	_kill_timer = Timer.new()
+	_kill_timer.wait_time = 1.5
+	_kill_timer.one_shot = true
+	_kill_timer.timeout.connect(_on_kill_timer_timeout)
+	add_child(_kill_timer)
 
 func _on_body_entered(player: Node) -> void:
-	if player is Player:
-		if is_fire:
-			_handle_fire_obstacle(player)
-		else:
-			_handle_burnable_obstacle(player)
-
-func _handle_fire_obstacle(player: Player) -> void:
-	if player.current_state == Player.STATE.BURNING:
-		_spread_fire()
-	else:
-		player.die()
-
-func _handle_burnable_obstacle(player: Player) -> void:
-	if player.current_state == Player.STATE.BURNING:
-		_burn_to_ash()
-	else:
-		player.die()
-
-func _spread_fire() -> void:
-	if burn_state != BURN_STATE.NORMAL:
+	if player is not Player:
 		return
 
-	burn_state = BURN_STATE.BURNING
-	modulate = Color(1.4, 1.2, 0.8, 1.0)
+	match type:
+		TYPE.FIRE:
+			_handle_fire(player)
+		TYPE.FIREWORK:
+			_handle_firework(player)
+		TYPE.WOOD:
+			_handle_wood(player)
 
-	await utils.timeout(0.3)
-	modulate = Color(1.6, 1.0, 0.6, 1.0)
+func _handle_fire(player: Player) -> void:
+	_start_kill(player)
 
-	await utils.timeout(0.3)
-	modulate = Color(1.8, 0.8, 0.4, 1.0)
+func _handle_firework(player: Player) -> void:
+	if player.current_state == Player.STATE.BURNING:
+		_start_kill(player)
 
-	await utils.timeout(0.3)
-	modulate = Color(2.0, 0.5, 0.2, 1.0)
+func _handle_wood(player: Player) -> void:
+	if player.current_state == Player.STATE.BURNING:
+		_start_kill(player)
 
-	await utils.timeout(0.3)
-	modulate = Color(1, 1, 1, 1.0)
-
-func _burn_to_ash() -> void:
-	if burn_state != BURN_STATE.NORMAL:
+func _start_kill(_player: Player) -> void:
+	if _burn_state != 0:
 		return
+	_burn_state = 1
+	_kill_timer.start()
 
-	burn_state = BURN_STATE.BURNING
-
-	var sprite := get_node_or_null("Sprite2D") as Sprite2D
-	if sprite:
-		var tween := create_tween()
-		tween.set_parallel(true)
-		tween.tween_property(sprite, "modulate:a", 0.0, 0.5)
-		tween.tween_property(sprite, "scale", sprite.scale * 1.3, 0.5)
-		await tween.finished
-
-	burn_state = BURN_STATE.ASH
-	queue_free()
+func _on_kill_timer_timeout() -> void:
+	match type:
+		TYPE.FIRE:
+			pass
+		TYPE.FIREWORK:
+			print("firework became fire")
+			_burn_state = 0
+		TYPE.WOOD:
+			await utils.timeout(1.0)
+			queue_free()
