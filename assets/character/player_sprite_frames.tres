@@ -47,7 +47,19 @@
 [ext_resource type="Texture2D" uid="uid://dhd5mcu5ohcxy" path="res://assets/character/vibrating/vibrating-jump/6.png" id="23_tbo3i"]
 [ext_resource type="Texture2D" uid="uid://e51c72judcd1" path="res://assets/character/vibrating/vibrating-jump/7.png" id="24_syjp0"]
 [ext_resource type="Texture2D" uid="uid://ckndlobde6wxw" path="res://assets/character/vibrating/vibrating-jump/8.png" id="25_ltia4"]
+[ext_resource type="Texture2D" uid="uid://dlpa85kpyk8y0" path="res://assets/character/stable-jump/1.png" id="25_mddi3"]
+[ext_resource type="Texture2D" uid="uid://p7yd31xg7ib7" path="res://assets/character/stable-jump/2.png" id="26_c4320"]
 [ext_resource type="Texture2D" uid="uid://bjpywa4n3qgrx" path="res://assets/character/vibrating/vibrating-jump/9.png" id="26_huf1c"]
+[ext_resource type="Texture2D" uid="uid://5tpkjm886833" path="res://assets/character/stable-jump/3.png" id="27_w5dyw"]
+[ext_resource type="Texture2D" uid="uid://cq1ijhe18gyd7" path="res://assets/character/stable-jump/4.png" id="28_bqphj"]
+[ext_resource type="Texture2D" uid="uid://nli4j52rc3mf" path="res://assets/character/stable-jump/5.png" id="29_iyya5"]
+[ext_resource type="Texture2D" uid="uid://djssiptjjejfg" path="res://assets/character/stable-jump/6.png" id="30_bv6yl"]
+[ext_resource type="Texture2D" uid="uid://d4g38ja3w2sfa" path="res://assets/character/stable-jump/7.png" id="31_f4o7g"]
+[ext_resource type="Texture2D" uid="uid://cxtrh04t0gxf1" path="res://assets/character/stable-jump/8.png" id="32_46w6s"]
+[ext_resource type="Texture2D" uid="uid://c5ayolcdhf0jc" path="res://assets/character/stable-jump/9.png" id="33_wav6o"]
+[ext_resource type="Texture2D" uid="uid://d2ahcmqywqpd6" path="res://assets/character/stable-moving/1.png" id="34_bqphj"]
+[ext_resource type="Texture2D" uid="uid://dj0bhtyb6j5wr" path="res://assets/character/stable-moving/2.png" id="35_iyya5"]
+[ext_resource type="Texture2D" uid="uid://cy02p74hxj2ls" path="res://assets/character/stable-moving/3.png" id="36_bv6yl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lxjjv"]
 atlas = ExtResource("2_jfkvh")
@@ -105,7 +117,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_5i8uq")
 }],
-"loop": true,
+"loop": false,
 "name": &"stable",
 "speed": 5.0
 }, {
@@ -178,6 +190,52 @@ animations = [{
 "loop": false,
 "name": &"stable_eyebrow",
 "speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_mddi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_c4320")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_w5dyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_bqphj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_iyya5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_bv6yl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_f4o7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_46w6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_wav6o")
+}],
+"loop": false,
+"name": &"stable_jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("34_bqphj")
+}, {
+"duration": 1.5,
+"texture": ExtResource("35_iyya5")
+}, {
+"duration": 1.5,
+"texture": ExtResource("36_bv6yl")
+}],
+"loop": true,
+"name": &"stable_moving",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 3.0,
