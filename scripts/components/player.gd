@@ -27,7 +27,7 @@ signal state_change(new_state: int)
 signal movement_change(is_moving: bool)
 signal health_changed(current: int, max_hp: int)
 
-enum STATE { STABLE, BURNING, SHAKING, DEAD, EVOLVED }
+enum STATE { STABLE, BURNING, VIBRATING, DEAD, EVOLVED }
 enum ENV { AIR, WATER }
 
 const MAX_JUMP: int = 2
@@ -78,7 +78,7 @@ func change_state(new_state: STATE) -> void:
 			stabilized.emit()
 		STATE.BURNING:
 			burned.emit()
-		STATE.SHAKING:
+		STATE.VIBRATING:
 			shook.emit()
 
 func _physics_process(_delta: float) -> void:
@@ -96,9 +96,13 @@ func _physics_process(_delta: float) -> void:
 		jump_count = 0
 
 	if Input.is_action_just_pressed("jump") and jump_count < MAX_JUMP:
+		if current_state == STATE.VIBRATING:
+			player_sprite.stop()
+			player_sprite.play("vibrating_jump")
+			
 		jump_count += 1
 		velocity.y = JUMP_VELOCITY
-
+		
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -120,7 +124,7 @@ func detect_environment() -> void:
 		return
 
 	if current_state != STATE.BURNING:
-		change_state(STATE.SHAKING)
+		change_state(STATE.VIBRATING)
 
 	if burn_timer.is_stopped():
 		burn_timer.start()
@@ -194,8 +198,8 @@ func update_visual_state() -> void:
 			if current_state != state_at_call:
 				return
 			player_sprite.play("repeat_burning")
-		STATE.SHAKING:
-			player_sprite.play("shaking")
+		STATE.VIBRATING:
+			player_sprite.play("vibrating")
 		STATE.EVOLVED:
 			player_sprite.play("evolved")
 
