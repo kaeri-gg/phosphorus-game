@@ -52,7 +52,7 @@ player = NodePath("../../Player")
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_bi505")]
 unique_name_in_owner = true
-position = Vector2(174.00002, 200)
+position = Vector2(171.00002, 200)
 scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 4500, 720)
 
@@ -99,32 +99,32 @@ water_size = Vector2(200, 80)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 
 [node name="Water2" parent="." unique_id=1842181184 instance=ExtResource("6_o0b03")]
-position = Vector2(647, 549)
-water_size = Vector2(200, 0)
+position = Vector2(645, 467)
+water_size = Vector2(200, 100)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 starts_full = false
 
 [node name="Water3" parent="." unique_id=2125621244 instance=ExtResource("6_o0b03")]
-position = Vector2(1165, 614)
-water_size = Vector2(200, 0)
+position = Vector2(1164, 530)
+water_size = Vector2(200, 100)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 starts_full = false
 
 [node name="Water4" parent="." unique_id=1643629407 instance=ExtResource("6_o0b03")]
-position = Vector2(1684, 248)
-water_size = Vector2(200, 0)
+position = Vector2(1685, 164)
+water_size = Vector2(200, 100)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 starts_full = false
 
 [node name="Water5" parent="." unique_id=662461452 instance=ExtResource("6_o0b03")]
-position = Vector2(1694, 612)
-water_size = Vector2(200, 0)
+position = Vector2(1691, 533)
+water_size = Vector2(200, 100)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 starts_full = false
 
 [node name="Water6" parent="." unique_id=698946641 instance=ExtResource("6_o0b03")]
-position = Vector2(2300, 373)
-water_size = Vector2(200, 0)
+position = Vector2(2301, 291)
+water_size = Vector2(200, 100)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 starts_full = false
 
@@ -278,6 +278,7 @@ position = Vector2(254, 501)
 scale = Vector2(0.13637778, 0.13637778)
 source_water = NodePath("../Water")
 target_water = NodePath("../Water2")
+transfer_duration = 1.2
 
 [node name="Switch2" parent="." unique_id=1306160891 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("34_bphnd")]
 position = Vector2(1036, 543.00006)
@@ -285,6 +286,7 @@ rotation = 1.5707964
 scale = Vector2(0.13637778, 0.13637778)
 source_water = NodePath("../Water2")
 target_water = NodePath("../Water3")
+transfer_duration = 1.2
 
 [node name="Switch4" parent="." unique_id=836971773 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("34_bphnd")]
 position = Vector2(1944, 319)
@@ -292,11 +294,13 @@ rotation = -3.1415925
 scale = Vector2(0.13637778, 0.13637778)
 source_water = NodePath("../Water4")
 target_water = NodePath("../Water5")
+transfer_duration = 1.2
 
 [node name="Switch3" parent="." unique_id=84159234 instance=ExtResource("34_bphnd")]
 position = Vector2(1788.0001, 419.00003)
 rotation = 1.5707964
 scale = Vector2(0.13637778, 0.13637778)
+transfer_duration = 1.2
 
 [node name="Switch5" parent="." unique_id=1102822862 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("34_bphnd")]
 position = Vector2(2234, 455)
@@ -304,6 +308,7 @@ rotation = 3.1415927
 scale = Vector2(0.13637778, 0.13637778)
 source_water = NodePath("../Water5")
 target_water = NodePath("../Water6")
+transfer_duration = 1.2
 
 [node name="PlatformGrayPipe" parent="." unique_id=1415318706 instance=ExtResource("33_mj800")]
 position = Vector2(239, 605.00006)

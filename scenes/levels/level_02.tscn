@@ -100,8 +100,8 @@ water_size = Vector2(220, 100)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 
 [node name="Water5" parent="." unique_id=302534254 instance=ExtResource("5_km0xc")]
-position = Vector2(2837, 562)
-water_size = Vector2(220, 0)
+position = Vector2(2834, 466)
+water_size = Vector2(220, 100)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 starts_full = false
 
