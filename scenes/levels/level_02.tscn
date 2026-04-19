@@ -155,5 +155,5 @@ grow_vertical = 2
 texture = ExtResource("10_n536o")
 expand_mode = 5
 
-[node name="HealthBar" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("12_m2jhg")]
+[node name="HealthUI" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("12_m2jhg")]
 player = NodePath("../../Player")
