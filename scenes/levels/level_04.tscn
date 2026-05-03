@@ -68,7 +68,6 @@ surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 
 [node name="PlatformWhiteTank" parent="." unique_id=1227335199 instance=ExtResource("10_afct4")]
 position = Vector2(159, 345)
-scale = Vector2(0.39102107, 0.39102107)
 
 [node name="PlatformGrayClosingPipe" parent="." unique_id=818493941 instance=ExtResource("12_1a7k5")]
 position = Vector2(-71, 481)
@@ -77,17 +76,14 @@ scale = Vector2(0.04295186, 0.04295186)
 [node name="PlatformGrayPipeInsertCap" parent="." unique_id=1089872355 instance=ExtResource("13_x5hhl")]
 position = Vector2(-149.00003, 289.99997)
 rotation = 1.5707964
-scale = Vector2(0.03531767, 0.038901262)
 
 [node name="PlatformGrayPipeInsertCap2" parent="." unique_id=1191169911 instance=ExtResource("13_x5hhl")]
 position = Vector2(279.99997, 368)
 rotation = 1.5707964
-scale = Vector2(0.03531767, 0.038901262)
 
 [node name="PlatformGrayConnectionPipe" parent="." unique_id=464077310 instance=ExtResource("14_4w8xk")]
 position = Vector2(-72, 547)
 rotation = 3.1415927
-scale = Vector2(0.10582009, 0.10582009)
 
 [node name="PlatformGrayMetalRope" parent="." unique_id=393274938 instance=ExtResource("15_uxfkd")]
 position = Vector2(-101, -19)
@@ -109,7 +105,6 @@ scale = Vector2(0.106122576, 0.10858284)
 [node name="PlatformGrayInBetween" parent="." unique_id=1488933027 instance=ExtResource("22_ckay5")]
 position = Vector2(-60.99997, 380.00006)
 rotation = 1.5625234
-scale = Vector2(0.09533596, -0.086293325)
 
 [node name="ObstaclePipeFire" parent="." unique_id=1256502193 instance=ExtResource("24_0te1q")]
 position = Vector2(468, 231)

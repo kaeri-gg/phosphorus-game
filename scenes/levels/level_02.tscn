@@ -56,7 +56,7 @@ player = NodePath("../../Player")
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("6_kx1rr")]
 unique_name_in_owner = true
-position = Vector2(130, 333.00003)
+position = Vector2(2419, 128)
 scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 2615, 720)
 
@@ -185,22 +185,18 @@ texture = ExtResource("8_xwa1x")
 [node name="NoCollisionPipe" parent="." unique_id=1300504481 instance=ExtResource("9_6ms8u")]
 position = Vector2(44, 635)
 rotation = 1.5707964
-scale = Vector2(-0.06875563, -0.124541394)
 
 [node name="NoCollisionPipe5" parent="." unique_id=1000956013 instance=ExtResource("9_6ms8u")]
 position = Vector2(215, 635)
 rotation = 1.5707964
-scale = Vector2(-0.06875563, -0.124541394)
 
 [node name="NoCollisionPipe2" parent="." unique_id=1918060414 instance=ExtResource("9_6ms8u")]
 position = Vector2(515, 635)
 rotation = 1.5707964
-scale = Vector2(-0.06875563, -0.124541394)
 
 [node name="NoCollisionPipe6" parent="." unique_id=1895544833 instance=ExtResource("9_6ms8u")]
 position = Vector2(686, 635)
 rotation = 1.5707964
-scale = Vector2(-0.06875563, -0.124541394)
 
 [node name="PlatformGrayPipe6" parent="." unique_id=2133992950 instance=ExtResource("10_r2xis")]
 position = Vector2(724, 482)
@@ -610,19 +606,17 @@ scale = Vector2(0.45593345, 0.41932386)
 [node name="PlatformWhitePortalTank" parent="." unique_id=1227335199 instance=ExtResource("19_r1j2e")]
 position = Vector2(2423.9998, 242.99998)
 rotation = 3.1415927
-scale = Vector2(0.371954, -0.43274227)
 
 [node name="PortalArea" parent="PlatformWhitePortalTank" unique_id=1878742614 instance=ExtResource("20_a00rx")]
 position = Vector2(13.441879, 9.243414)
 scale = Vector2(1.9678702, 1.0553372)
+next_scene_path = "uid://b7i2keg4pq27p"
 
 [node name="PlatformWhiteTank" parent="." unique_id=1113346599 instance=ExtResource("20_m2te4")]
 position = Vector2(121, 535)
-scale = Vector2(0.39102107, 0.39102107)
 
 [node name="PlatformWhiteTank2" parent="." unique_id=1220334499 instance=ExtResource("20_m2te4")]
 position = Vector2(590, 557)
-scale = Vector2(0.39102107, 0.39102107)
 
 [node name="PlatformWhiteTank3" parent="." unique_id=2014500481 instance=ExtResource("20_m2te4")]
 position = Vector2(964, 259)
