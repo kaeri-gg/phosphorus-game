@@ -153,6 +153,7 @@ Label/constants/shadow_outline_size = 5
 Label/fonts/font = ExtResource("2_7r1kg")
 
 [node name="Switch" type="StaticBody2D" unique_id=1596610064]
+scale = Vector2(0.14010037, 0.13523985)
 script = ExtResource("1_fwh2d")
 
 [node name="SwitchSprite" type="AnimatedSprite2D" parent="." unique_id=157563623]

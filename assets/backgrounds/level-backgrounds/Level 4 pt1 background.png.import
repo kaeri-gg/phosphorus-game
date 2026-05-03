@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3y55mgs85lh1"
-path="res://.godot/imported/Screen 3_End.png-f3aed912d996b9fe9c958bc24d3f0e8b.ctex"
+uid="uid://x61wfrsmpw7j"
+path="res://.godot/imported/Level 4 pt1 background.png-a3975acc729a1020c0d79b84089fb295.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/level-backgrounds/Screen 3_End.png"
-dest_files=["res://.godot/imported/Screen 3_End.png-f3aed912d996b9fe9c958bc24d3f0e8b.ctex"]
+source_file="res://assets/backgrounds/level-backgrounds/Level 4 pt1 background.png"
+dest_files=["res://.godot/imported/Level 4 pt1 background.png-a3975acc729a1020c0d79b84089fb295.ctex"]
 
 [params]
 

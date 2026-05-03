@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://iuq1gve72064"]
 
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_t0hvh"]
-[ext_resource type="Texture2D" uid="uid://bxn1ujbj0mdcv" path="res://assets/backgrounds/level-backgrounds/Level 1 Background.png" id="2_lswbx"]
+[ext_resource type="Texture2D" uid="uid://bf8cmweygluea" path="res://assets/backgrounds/level-backgrounds/Level 1 background.png" id="2_cywot"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="3_2djvx"]
 [ext_resource type="Texture2D" uid="uid://7ody5gnpejla" path="res://assets/platforms/Concrete floor.png" id="8_w4kkx"]
 [ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="9_kfebt"]
@@ -41,7 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_lswbx")
+texture = ExtResource("2_cywot")
 expand_mode = 5
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=876825066]
@@ -190,26 +190,21 @@ scale = Vector2(0.31738773, 0.38969895)
 
 [node name="PlatformGrayPipe5" parent="." unique_id=262457994 instance=ExtResource("13_tyxjt")]
 position = Vector2(263, 653)
-scale = Vector2(0.3366552, 0.3796088)
 
 [node name="PlatformGrayTank" parent="." unique_id=1432242628 instance=ExtResource("14_07lms")]
 position = Vector2(548.99994, 356)
 rotation = 0.0067157038
-scale = Vector2(0.38349155, 0.40381145)
 
 [node name="PlatformGrayTank3" parent="." unique_id=1935618649 instance=ExtResource("14_07lms")]
 position = Vector2(1332.0001, 358.99997)
 rotation = 0.0067157038
-scale = Vector2(0.38349155, 0.40381145)
 
 [node name="PlatformGrayTank2" parent="." unique_id=1295455442 instance=ExtResource("14_07lms")]
 position = Vector2(112.99999, 498)
 rotation = 0.0067157038
-scale = Vector2(0.38349155, 0.40381145)
 
 [node name="PlatformBlueTank" parent="." unique_id=1863363077 instance=ExtResource("11_ijn0p")]
 position = Vector2(950.99994, 629)
-scale = Vector2(0.5262045, 0.5262045)
 
 [node name="PlatformBlueTank2" parent="." unique_id=2075152869 instance=ExtResource("11_ijn0p")]
 position = Vector2(1754.0001, 633.99994)
@@ -524,7 +519,6 @@ scale = Vector2(0.05178721, 0.048258077)
 [node name="PlatformWhitePortalTank" parent="." unique_id=1227335199 instance=ExtResource("19_iu1m7")]
 position = Vector2(2494.9998, 159.99998)
 rotation = 3.1415927
-scale = Vector2(0.371954, -0.43274227)
 
 [node name="PortalArea" parent="PlatformWhitePortalTank" unique_id=1878742614 instance=ExtResource("24_mhiu8")]
 position = Vector2(13.441879, 9.243414)

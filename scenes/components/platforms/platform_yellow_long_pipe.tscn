@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ccr4ihej3jug" path="res://assets/platforms/Inbetween 1.png" id="1_bjdiq"]
 
 [node name="PlatformYellowLongPipe" type="StaticBody2D" unique_id=532329559]
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.6, 0.6)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=145495478]
 position = Vector2(-8.571428, -2.8571434)
