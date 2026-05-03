@@ -12,6 +12,9 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY: float = -480.0
 @export var PLAYER_HEALTH: int = 7
 
+## Seconds between each -1 HP tick while the player is BURNING.
+@export var DAMAGE_INTERVAL: float = 1.5
+
 @export_group("Camera")
 @export var camera_bounds: Rect2 = Rect2(0, 0, 1280, 720)
 
