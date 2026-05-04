@@ -465,15 +465,6 @@ rotation = 1.5625234
 scale = Vector2(0.05233043, -0.060806744)
 metadata/_edit_group_ = true
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=933236835]
-layout_mode = 0
-offset_left = 5.9999957
-offset_top = 420.0
-offset_right = 1926.0
-offset_bottom = 1500.0
-scale = Vector2(0.03247055, 0.03247055)
-texture = ExtResource("22_ilnvv")
-
 [node name="TextureRect36" type="TextureRect" parent="." unique_id=1405168632]
 layout_mode = 0
 offset_left = 1696.0161

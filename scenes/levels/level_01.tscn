@@ -62,7 +62,7 @@ scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 2640, 720)
 
 [node name="Water" type="Node2D" parent="." unique_id=1444035852]
-position = Vector2(34, 432)
+position = Vector2(34, 406)
 scale = Vector2(1.0599455, 1.0599455)
 script = ExtResource("9_kfebt")
 water_size = Vector2(170, 110)
@@ -70,7 +70,7 @@ min_height = 10.0
 metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
 
 [node name="Water2" type="Node2D" parent="." unique_id=148608901]
-position = Vector2(468, 291)
+position = Vector2(464.00003, 266)
 scale = Vector2(1.0599455, 1.0599455)
 script = ExtResource("9_kfebt")
 water_size = Vector2(170, 110)
@@ -86,7 +86,7 @@ min_height = 10.0
 metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
 
 [node name="Water4" type="Node2D" parent="." unique_id=302691412]
-position = Vector2(2432, 121)
+position = Vector2(2430, 127)
 scale = Vector2(1.0599455, 1.0599455)
 script = ExtResource("9_kfebt")
 water_size = Vector2(150, 100)
@@ -95,59 +95,59 @@ metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
 
 [node name="TextureRect4" type="TextureRect" parent="." unique_id=1998232517]
 layout_mode = 0
-offset_left = 498.99997
+offset_left = 496.99997
 offset_top = 684.0
-offset_right = 2419.0
+offset_right = 2417.0
 offset_bottom = 1764.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("8_w4kkx")
 
 [node name="TextureRect16" type="TextureRect" parent="." unique_id=2004728202]
 layout_mode = 0
-offset_left = 447.99997
+offset_left = 445.99997
 offset_top = 684.0
-offset_right = 2368.0
+offset_right = 2366.0
 offset_bottom = 1764.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("8_w4kkx")
 
 [node name="TextureRect5" type="TextureRect" parent="." unique_id=1274262353]
 layout_mode = 0
-offset_left = 549.99994
+offset_left = 548.0
 offset_top = 684.0
-offset_right = 2470.0
+offset_right = 2468.0
 offset_bottom = 1764.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("8_w4kkx")
 
 [node name="TextureRect6" type="TextureRect" parent="." unique_id=140081364]
 layout_mode = 0
-offset_left = 601.0
+offset_left = 599.0001
 offset_top = 684.0
-offset_right = 2521.0
+offset_right = 2519.0
 offset_bottom = 1764.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("8_w4kkx")
 
 [node name="NoCollisionPipe" parent="." unique_id=1300504481 instance=ExtResource("15_gi8m4")]
-position = Vector2(41, 604)
+position = Vector2(46.000004, 572)
 rotation = 1.5707964
-scale = Vector2(0.13672854, 0.16527668)
+scale = Vector2(0.16488825, 0.24700435)
 
 [node name="NoCollisionPipe2" parent="." unique_id=1377580802 instance=ExtResource("15_gi8m4")]
-position = Vector2(193, 605)
+position = Vector2(186.00002, 580)
 rotation = 1.5707964
-scale = Vector2(0.1367286, 0.16527662)
+scale = Vector2(0.15424912, 0.25391445)
 
 [node name="NoCollisionPipe3" parent="." unique_id=486613232 instance=ExtResource("15_gi8m4")]
-position = Vector2(476, 554)
+position = Vector2(468, 534)
 rotation = 1.5707964
-scale = Vector2(0.2175145, 0.20319353)
+scale = Vector2(0.2175145, 0.25068313)
 
 [node name="NoCollisionPipe4" parent="." unique_id=1762804945 instance=ExtResource("15_gi8m4")]
-position = Vector2(627.99994, 555.00006)
+position = Vector2(613, 530)
 rotation = 1.5707964
-scale = Vector2(0.21751459, 0.20319355)
+scale = Vector2(0.2243206, 0.27741075)
 
 [node name="PlatformGrayPipe12" parent="." unique_id=79879112 instance=ExtResource("13_tyxjt")]
 position = Vector2(436, 489)
@@ -163,8 +163,8 @@ rotation = 1.5707964
 scale = Vector2(0.20626475, 0.4567124)
 
 [node name="PlatformGrayPipe7" parent="." unique_id=978065724 instance=ExtResource("13_tyxjt")]
-position = Vector2(1420.9999, 507)
-scale = Vector2(0.2960018, 0.4756211)
+position = Vector2(1420.9998, 508)
+scale = Vector2(0.29813033, 0.5051076)
 
 [node name="PlatformGrayPipe8" parent="." unique_id=1018058948 instance=ExtResource("13_tyxjt")]
 position = Vector2(1466, 580)
@@ -172,7 +172,7 @@ rotation = -0.004604649
 scale = Vector2(0.44072944, 0.49393162)
 
 [node name="PlatformGrayPipe9" parent="." unique_id=999230883 instance=ExtResource("13_tyxjt")]
-position = Vector2(1522, 277)
+position = Vector2(1525, 270)
 rotation = 1.5707964
 scale = Vector2(0.39212942, 0.4794163)
 
@@ -217,9 +217,9 @@ position = Vector2(1321, 554)
 scale = Vector2(0.10339235, 0.10947206)
 
 [node name="PlatformGrayConnectionPipe24" parent="." unique_id=1764933998 instance=ExtResource("22_svp4f")]
-position = Vector2(1528, 465)
+position = Vector2(1530, 461)
 rotation = -1.5707964
-scale = Vector2(0.10339235, 0.10947206)
+scale = Vector2(0.117063835, 0.11286901)
 
 [node name="PlatformGrayConnectionPipe25" parent="." unique_id=527134703 instance=ExtResource("22_svp4f")]
 position = Vector2(2365.0002, 536)
@@ -335,7 +335,7 @@ rotation = 3.1415927
 scale = Vector2(0.06299363, 0.057022147)
 
 [node name="PlatformGrayInBetween3" parent="." unique_id=1564875354 instance=ExtResource("24_e5bmj")]
-position = Vector2(1600, 415)
+position = Vector2(1603, 408)
 rotation = -3.1415925
 scale = Vector2(0.06299363, 0.057022147)
 
@@ -346,36 +346,36 @@ scale = Vector2(0.052807182, 0.06291447)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=791175183]
 layout_mode = 0
-offset_left = 65.99999
-offset_top = 684.0
-offset_right = 1986.0
+offset_left = 70.99999
+offset_top = 684.00006
+offset_right = 1991.0
 offset_bottom = 1764.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("8_w4kkx")
 
 [node name="TextureRect15" type="TextureRect" parent="." unique_id=803524765]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 684.0
-offset_right = 1935.0
+offset_left = 20.000002
+offset_top = 684.00006
+offset_right = 1940.0
 offset_bottom = 1764.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("8_w4kkx")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1361543296]
 layout_mode = 0
-offset_left = 116.999985
-offset_top = 684.0
-offset_right = 2037.0
+offset_left = 121.999985
+offset_top = 684.00006
+offset_right = 2042.0
 offset_bottom = 1764.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("8_w4kkx")
 
 [node name="TextureRect3" type="TextureRect" parent="." unique_id=1500686609]
 layout_mode = 0
-offset_left = 168.0
-offset_top = 684.0
-offset_right = 2088.0
+offset_left = 173.0
+offset_top = 684.00006
+offset_right = 2093.0
 offset_bottom = 1764.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("8_w4kkx")
@@ -432,21 +432,21 @@ position = Vector2(326, 484.00003)
 position = Vector2(282, 473.00003)
 
 [node name="PlatformGrayClosingPipe12" parent="." unique_id=1288313613 instance=ExtResource("20_cywot")]
-position = Vector2(1490, 416)
+position = Vector2(1493, 409)
 
 [node name="PlatformGrayClosingPipe16" parent="." unique_id=266062047 instance=ExtResource("20_cywot")]
-position = Vector2(1632, 416)
+position = Vector2(1635, 409)
 rotation = -3.1415927
 
 [node name="PlatformGrayClosingPipe13" parent="." unique_id=286609566 instance=ExtResource("20_cywot")]
-position = Vector2(1492, 131.00002)
+position = Vector2(1495, 124.000015)
 
 [node name="PlatformGrayClosingPipe14" parent="." unique_id=1275383981 instance=ExtResource("20_cywot")]
-position = Vector2(1538, 87)
+position = Vector2(1541, 80)
 rotation = 1.5707964
 
 [node name="PlatformGrayClosingPipe15" parent="." unique_id=1108032597 instance=ExtResource("20_cywot")]
-position = Vector2(1586.0001, 130)
+position = Vector2(1589, 123)
 rotation = 3.1415927
 
 [node name="PlatformGrayClosingPipe4" parent="." unique_id=1563201851 instance=ExtResource("20_cywot")]
@@ -493,7 +493,7 @@ scale = Vector2(0.10438789, -0.103350446)
 position = Vector2(1293, 503.00003)
 
 [node name="PlatformGray4WayConnector4" parent="." unique_id=185703854 instance=ExtResource("16_lswbx")]
-position = Vector2(1535, 427.00003)
+position = Vector2(1538, 420)
 
 [node name="PlatformGray4WayConnector5" parent="." unique_id=1933069376 instance=ExtResource("16_lswbx")]
-position = Vector2(1536, 142.00002)
+position = Vector2(1539, 135)
