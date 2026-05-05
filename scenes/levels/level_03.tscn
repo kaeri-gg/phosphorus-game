@@ -422,11 +422,11 @@ scale = Vector2(0.3238669, 0.3238669)
 position = Vector2(1762, -121)
 
 [node name="PlatformGrayMetalRope5" parent="." unique_id=1644847128 instance=ExtResource("11_8o2w1")]
-position = Vector2(2679.0002, -4)
+position = Vector2(2679, -6)
 scale = Vector2(0.3238669, 0.3238669)
 
 [node name="PlatformGrayMetalRope6" parent="." unique_id=71253306 instance=ExtResource("11_8o2w1")]
-position = Vector2(2491.0002, 3.000001)
+position = Vector2(2491.0002, 1.0000014)
 
 [node name="PlatformRedInBetween2" parent="." unique_id=1892193927 instance=ExtResource("21_bdb6i")]
 position = Vector2(128.00002, 185)

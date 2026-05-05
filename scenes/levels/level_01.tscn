@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_t0hvh"]
 [ext_resource type="Texture2D" uid="uid://bf8cmweygluea" path="res://assets/backgrounds/level-backgrounds/Level 1 background.png" id="2_cywot"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="3_2djvx"]
+[ext_resource type="PackedScene" uid="uid://bqkoavunp5sgc" path="res://scenes/components/tutorial_dialog.tscn" id="5_vrcmr"]
+[ext_resource type="PackedScene" uid="uid://bw8wh8h711eih" path="res://scenes/components/in_game_dialog.tscn" id="6_svp4f"]
 [ext_resource type="Texture2D" uid="uid://7ody5gnpejla" path="res://assets/platforms/Concrete floor.png" id="8_w4kkx"]
 [ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="9_kfebt"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="10_ijn0p"]
@@ -51,6 +53,15 @@ scale = Vector2(0.9995828, 1)
 player = NodePath("../../Player")
 
 [node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("26_lswbx")]
+
+[node name="TutorialDialog" parent="UILayer" unique_id=44206821 instance=ExtResource("5_vrcmr")]
+position = Vector2(305, 306)
+dialog_text = "hello, please test me!"
+
+[node name="InGameDialog" parent="." unique_id=1528114602 instance=ExtResource("6_svp4f")]
+position = Vector2(129, 365)
+scale = Vector2(0.41078806, 0.99373966)
+dialog_text = "Press [A, S, D, W] or arrow keys to move, [SPACE] to jump."
 
 [node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("10_ijn0p")]
 position = Vector2(908, 771)
@@ -130,12 +141,12 @@ scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("8_w4kkx")
 
 [node name="NoCollisionPipe" parent="." unique_id=1300504481 instance=ExtResource("15_gi8m4")]
-position = Vector2(46.000004, 572)
+position = Vector2(37.000004, 572)
 rotation = 1.5707964
 scale = Vector2(0.16488825, 0.24700435)
 
 [node name="NoCollisionPipe2" parent="." unique_id=1377580802 instance=ExtResource("15_gi8m4")]
-position = Vector2(186.00002, 580)
+position = Vector2(193, 580)
 rotation = 1.5707964
 scale = Vector2(0.15424912, 0.25391445)
 

@@ -71,6 +71,7 @@ animations = [{
 }]
 
 [node name="ObstacleFireworks" type="Area2D" unique_id=90185703]
+scale = Vector2(0.093511365, 0.102127805)
 script = ExtResource("1_j2mxa")
 type = 1
 
