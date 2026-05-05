@@ -732,44 +732,55 @@ scale = Vector2(0.06265502, -0.06672611)
 [node name="PlatformGray3WayConnector4" parent="." unique_id=891281529 instance=ExtResource("19_x1re1")]
 position = Vector2(1207.9999, 571)
 rotation = 1.5707964
+scale = Vector2(0.113117576, 0.109541774)
 
 [node name="PlatformGray3WayConnector5" parent="." unique_id=332320725 instance=ExtResource("19_x1re1")]
 position = Vector2(1668, 381.99997)
 rotation = 4.712389
+scale = Vector2(0.113117576, 0.109541774)
 
 [node name="PlatformGray3WayConnector13" parent="." unique_id=1846944599 instance=ExtResource("19_x1re1")]
 position = Vector2(1537.0001, 23)
 rotation = 3.1415927
+scale = Vector2(0.113117576, 0.109541774)
 
 [node name="PlatformGray3WayConnector12" parent="." unique_id=290961130 instance=ExtResource("19_x1re1")]
 position = Vector2(1345, 351.99997)
 rotation = 6.2831855
+scale = Vector2(0.113117576, 0.109541774)
 
 [node name="PlatformGray3WayConnector6" parent="." unique_id=1536716429 instance=ExtResource("19_x1re1")]
 position = Vector2(1888.0001, 560)
 rotation = 3.1415927
+scale = Vector2(0.113117576, 0.109541774)
 
 [node name="PlatformGray3WayConnector8" parent="." unique_id=249391565 instance=ExtResource("19_x1re1")]
 position = Vector2(2184, 381)
 rotation = 4.712389
+scale = Vector2(0.113117576, 0.109541774)
 
 [node name="PlatformGray3WayConnector9" parent="." unique_id=1082674555 instance=ExtResource("19_x1re1")]
 position = Vector2(2387, 435.00003)
 rotation = 1.5707964
+scale = Vector2(0.113117576, 0.109541774)
 
 [node name="PlatformGray3WayConnector11" parent="." unique_id=1310934877 instance=ExtResource("19_x1re1")]
 position = Vector2(2659, 440)
 rotation = -1.5707964
+scale = Vector2(0.113117576, 0.109541774)
 
 [node name="PlatformGray3WayConnector10" parent="." unique_id=346653038 instance=ExtResource("19_x1re1")]
 position = Vector2(2522, 663)
+scale = Vector2(0.113117576, 0.109541774)
 
 [node name="PlatformGray3WayConnector7" parent="." unique_id=2132202239 instance=ExtResource("19_x1re1")]
 position = Vector2(2184, 575)
 rotation = 4.712389
+scale = Vector2(0.113117576, 0.109541774)
 
 [node name="PlatformGray4WayConnector2" parent="." unique_id=313960158 instance=ExtResource("21_b03hd")]
 position = Vector2(1507, 588)
+scale = Vector2(0.119061485, 0.12715384)
 
 [node name="PlatformYellowClosingPipe" parent="." unique_id=1369216407 instance=ExtResource("24_mf6hd")]
 position = Vector2(1381, 456)
@@ -819,12 +830,8 @@ position = Vector2(425.00006, 341)
 rotation = 0.16423582
 
 [node name="ObstacleFireworks7" parent="." unique_id=1549089474 instance=ExtResource("25_eqf4o")]
-position = Vector2(463.00003, 341)
-rotation = 0.57195556
-
-[node name="ObstacleFireworks8" parent="." unique_id=1045617884 instance=ExtResource("25_eqf4o")]
-position = Vector2(458, 343)
-rotation = 0.022315204
+position = Vector2(442.99997, 344.00003)
+rotation = -0.024855912
 
 [node name="ObstacleFireworks25" parent="." unique_id=1030777271 instance=ExtResource("25_eqf4o")]
 position = Vector2(175.00002, 833.00006)
@@ -965,11 +972,6 @@ position = Vector2(1142, 398)
 rotation = 0.07155619
 scale = Vector2(0.07215785, 0.077743754)
 
-[node name="ObstacleFireworks16" parent="." unique_id=1043342649 instance=ExtResource("25_eqf4o")]
-position = Vector2(1152, 398)
-rotation = 0.010215513
-scale = Vector2(0.07215785, 0.077743754)
-
 [node name="ObstacleFireworks17" parent="." unique_id=360281789 instance=ExtResource("25_eqf4o")]
 position = Vector2(1779, 500)
 rotation = 0.5279075
@@ -1071,9 +1073,11 @@ rotation = -1.5707964
 
 [node name="PlatformGray3WayConnector16" parent="." unique_id=900335818 instance=ExtResource("19_x1re1")]
 position = Vector2(1216, 767.99994)
+scale = Vector2(0.113117576, 0.109541774)
 
 [node name="PlatformGray3WayConnector17" parent="." unique_id=704674292 instance=ExtResource("19_x1re1")]
 position = Vector2(1508, 768)
+scale = Vector2(0.113117576, 0.109541774)
 
 [node name="PlatformGray3WayConnector18" parent="." unique_id=297349736 instance=ExtResource("19_x1re1")]
 position = Vector2(1883, 768.00006)
